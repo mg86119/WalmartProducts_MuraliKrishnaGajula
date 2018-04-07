@@ -9,11 +9,10 @@
 import Foundation
 import UIKit
 
-// TODO: Add loading indicator for TableView for intial load and subsequent n/w call
-// go to top button
+// TODO: Add 'Go to top' button
 
 protocol ProductsTableViewDelegate: class {
-    func productDetails(_ product: Product)
+    func productDetails(_ product: Product,_ image: UIImage)
     func loadNextPage()
 }
 
@@ -21,15 +20,15 @@ class ProductsTableView: UIView,
                          UITableViewDelegate,
                          UITableViewDataSource {
     
-    private let CellIdentifier = "ProductsTableViewCell"
     @IBOutlet weak var tableView: UITableView!
+    private let CellIdentifier = "ProductsTableViewCell"
     weak var delegate: ProductsTableViewDelegate?
-    var viewModel: [Product] = []
+    var viewModel = ProductsViewModel()
     
     // MARK: -  UITableViewDataSource
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.count
+        return viewModel.products.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -37,13 +36,12 @@ class ProductsTableView: UIView,
         // based on design
         guard let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier, for: indexPath)
             as? ProductsTableViewCell else { return UITableViewCell() }
-            cell.configure(viewModel[indexPath.row])
-        print("cell \(indexPath.row)")
+            cell.configure(viewModel.products[indexPath.row])
         return cell
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        let lastElement = viewModel.count - 1
+        let lastElement = viewModel.products.count - 1
         if indexPath.row == lastElement {
             delegate?.loadNextPage()
         }
@@ -52,6 +50,13 @@ class ProductsTableView: UIView,
     // MARK: -  UITableViewDelegate
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        delegate?.productDetails(viewModel[indexPath.row])
+        guard let cell = tableView.cellForRow(at: indexPath) as? ProductsTableViewCell,
+            let imageStr = viewModel.products[indexPath.row].productImage,
+            let imageUrl = URL(string: imageStr),
+            let cachedImage = cell.imageCache.object(forKey: imageUrl.absoluteString as NSString) else {
+            return
+        }
+
+        delegate?.productDetails(viewModel.products[indexPath.row], cachedImage)
     }
 }

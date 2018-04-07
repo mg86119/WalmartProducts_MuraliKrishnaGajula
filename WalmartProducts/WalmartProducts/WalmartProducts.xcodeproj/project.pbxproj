@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8704BE6E207917B90025045F /* ProductDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8704BE6D207917B90025045F /* ProductDetailsViewController.swift */; };
+		8704BE70207918560025045F /* ProductDetailsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8704BE6F207918560025045F /* ProductDetailsTableView.swift */; };
+		8704BE72207922640025045F /* ProductsDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8704BE71207922640025045F /* ProductsDetailsTableViewCell.swift */; };
+		8704BE7420792A410025045F /* ProductsDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8704BE7320792A410025045F /* ProductsDetailsViewModel.swift */; };
+		8704BE7620792CB80025045F /* ProductsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8704BE7520792CB80025045F /* ProductsViewModel.swift */; };
 		877D78672078659300450B29 /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877D78662078659300450B29 /* ProductsViewController.swift */; };
 		877D7869207865AE00450B29 /* ProductsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877D7868207865AE00450B29 /* ProductsTableView.swift */; };
 		877D786B207865C500450B29 /* ProductsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877D786A207865C500450B29 /* ProductsTableViewCell.swift */; };
@@ -19,6 +24,7 @@
 		878BF3352078531500B3557F /* WalmartProductsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878BF3342078531500B3557F /* WalmartProductsTests.swift */; };
 		878BF3402078531500B3557F /* WalmartProductsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878BF33F2078531500B3557F /* WalmartProductsUITests.swift */; };
 		878BF34F2078607000B3557F /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878BF34E2078607000B3557F /* Product.swift */; };
+		87C23EB120797DBD00DF76F2 /* UIlabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C23EB020797DBD00DF76F2 /* UIlabel+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +45,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8704BE6D207917B90025045F /* ProductDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsViewController.swift; sourceTree = "<group>"; };
+		8704BE6F207918560025045F /* ProductDetailsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsTableView.swift; sourceTree = "<group>"; };
+		8704BE71207922640025045F /* ProductsDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsDetailsTableViewCell.swift; sourceTree = "<group>"; };
+		8704BE7320792A410025045F /* ProductsDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsDetailsViewModel.swift; sourceTree = "<group>"; };
+		8704BE7520792CB80025045F /* ProductsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewModel.swift; sourceTree = "<group>"; };
 		877D78662078659300450B29 /* ProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
 		877D7868207865AE00450B29 /* ProductsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsTableView.swift; sourceTree = "<group>"; };
 		877D786A207865C500450B29 /* ProductsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsTableViewCell.swift; sourceTree = "<group>"; };
@@ -57,6 +68,7 @@
 		878BF33F2078531500B3557F /* WalmartProductsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalmartProductsUITests.swift; sourceTree = "<group>"; };
 		878BF3412078531500B3557F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		878BF34E2078607000B3557F /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		87C23EB020797DBD00DF76F2 /* UIlabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIlabel+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,12 +96,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8704BE6C207917930025045F /* Product Details */ = {
+			isa = PBXGroup;
+			children = (
+				8704BE6D207917B90025045F /* ProductDetailsViewController.swift */,
+				8704BE6F207918560025045F /* ProductDetailsTableView.swift */,
+				8704BE71207922640025045F /* ProductsDetailsTableViewCell.swift */,
+				8704BE7320792A410025045F /* ProductsDetailsViewModel.swift */,
+			);
+			path = "Product Details";
+			sourceTree = "<group>";
+		};
 		877D78652078657C00450B29 /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				877D78662078659300450B29 /* ProductsViewController.swift */,
 				877D7868207865AE00450B29 /* ProductsTableView.swift */,
 				877D786A207865C500450B29 /* ProductsTableViewCell.swift */,
+				8704BE7520792CB80025045F /* ProductsViewModel.swift */,
 			);
 			path = Products;
 			sourceTree = "<group>";
@@ -98,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				877D786F20786A2700450B29 /* UIImageView+Extension.swift */,
+				87C23EB020797DBD00DF76F2 /* UIlabel+Extension.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -133,10 +158,11 @@
 		878BF31E2078531500B3557F /* WalmartProducts */ = {
 			isa = PBXGroup;
 			children = (
-				877D78712078727800450B29 /* NetworkService */,
-				877D786C207869C400450B29 /* Utility */,
 				877D78652078657C00450B29 /* Products */,
+				8704BE6C207917930025045F /* Product Details */,
 				878BF34D2078604D00B3557F /* Models */,
+				877D786C207869C400450B29 /* Utility */,
+				877D78712078727800450B29 /* NetworkService */,
 				878BF31F2078531500B3557F /* AppDelegate.swift */,
 				878BF3232078531500B3557F /* Main.storyboard */,
 				878BF3262078531500B3557F /* Assets.xcassets */,
@@ -308,11 +334,17 @@
 			files = (
 				877D787020786A2700450B29 /* UIImageView+Extension.swift in Sources */,
 				877D78672078659300450B29 /* ProductsViewController.swift in Sources */,
+				8704BE70207918560025045F /* ProductDetailsTableView.swift in Sources */,
 				877D786B207865C500450B29 /* ProductsTableViewCell.swift in Sources */,
 				877D7869207865AE00450B29 /* ProductsTableView.swift in Sources */,
 				878BF3202078531500B3557F /* AppDelegate.swift in Sources */,
+				8704BE7620792CB80025045F /* ProductsViewModel.swift in Sources */,
+				8704BE72207922640025045F /* ProductsDetailsTableViewCell.swift in Sources */,
 				878BF34F2078607000B3557F /* Product.swift in Sources */,
+				8704BE7420792A410025045F /* ProductsDetailsViewModel.swift in Sources */,
+				87C23EB120797DBD00DF76F2 /* UIlabel+Extension.swift in Sources */,
 				877D78732078729000450B29 /* NetworkService.swift in Sources */,
+				8704BE6E207917B90025045F /* ProductDetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

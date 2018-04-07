@@ -39,6 +39,8 @@ class NetworkService {
         }
         
         let session = URLSession.shared
+        // TODO: Need to handle response and error using (data, response, error)
+        // Also we can check the "status" flag for 200
         task = session.dataTask(with: url) { [weak self] (data, _, _) in
             guard let data = data else {
                 self?.notifyDelegateFailure()
@@ -50,7 +52,7 @@ class NetworkService {
                     self?.notifyDelegateFailure()
                     return
             }
-            
+
             guard let products = self?.createProducts(withJson: jsonProductsArray) else {
                 self?.notifyDelegateFailure()
                 return

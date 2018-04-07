@@ -21,31 +21,16 @@ class ProductsTableViewCell: UITableViewCell {
             return
         }
 
-        downloadImage(url: imageUrl , completion: { (image, error) in
-            let finalImage = image ?? UIImage(named: "defaultTableViewCellImage")
-            DispatchQueue.main.async {
-                self.productImage.image = finalImage
-            }
-        })
-    }
-    
-    func downloadImage(url: URL, completion: @escaping (_ image: UIImage?, _ error: Error? ) -> Void) {
-        if let cachedImage = imageCache.object(forKey: url.absoluteString as NSString) {
-            completion(cachedImage, nil)
-            print("displaying from cache") // delete me
+        if let cachedImage = imageCache.object(forKey: imageUrl.absoluteString as NSString) {
+            productImage.image = cachedImage
         } else {
-            URLSession.shared.dataTask(with: url, completionHandler: {
-                [weak self] (data, response, error) -> Void in
-                print("downloading image")
-                if let error = error {
-                    completion(nil, error)
-                } else if let data = data, let image = UIImage(data: data) {
-                    self?.imageCache.setObject(image, forKey: url.absoluteString as NSString)
-                    completion(image, nil)
-                } else {
-                    completion(nil, nil)
+            productImage.downloadImage(url: imageUrl, completion: { [weak self] (image, error) in
+                let finalImage = image ?? UIImage(named: "defaultTableViewCellImage")! //Used forcewrap as its static existing image
+                DispatchQueue.main.async {
+                    self?.imageCache.setObject(finalImage, forKey: imageUrl.absoluteString as NSString)
+                    self?.productImage.image = finalImage
                 }
-            }).resume()
+            })
         }
     }
 }

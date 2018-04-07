@@ -14,7 +14,7 @@ class ProductsViewController: UIViewController {
     @IBOutlet fileprivate weak var mainView: ProductsTableView!
     @IBOutlet fileprivate weak var loadingIndicator: UIActivityIndicatorView!
     
-    private let DetailSegue = "DetailSegue"
+    private let ProductDetailsSegue = "ProductDetailsSegue"
     private let networkService = NetworkService()
     private var pageNumber = 1
     private let productsInPage = 30
@@ -33,17 +33,24 @@ class ProductsViewController: UIViewController {
         showLoading(loading: true)
     }
     
+    fileprivate func showLoading(loading: Bool) {
+        loading ? loadingIndicator.startAnimating() : loadingIndicator.stopAnimating()
+    }
+    
+    fileprivate func retry() {
+        showLoading(loading: true)
+        networkService.getProductsList(ofPages: pageNumber, ofProducts: productsInPage)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
         
-       /* if let destination = segue.destination as? SchoolDetailsViewController,
-            let data = sender as? Description {
-            destination.model = data
-        }*/
-    }
-    
-    fileprivate func showLoading(loading: Bool) {
-        loading ? loadingIndicator.startAnimating() : loadingIndicator.stopAnimating()
+        if let destination = segue.destination as? ProductDetailsViewController,
+            let data = sender as? [String: Any],
+            let product = data["product"] as? Product,
+            let image = data["image"] as? UIImage {
+            destination.viewModel = ProductsDetailsViewModel(image: image, product: product)
+        }
     }
 }
 
@@ -51,30 +58,37 @@ class ProductsViewController: UIViewController {
 
 extension ProductsViewController: NetworkServiceDelegate {
     func taskComplete(_ model: [Product]) {
-        mainView.viewModel = mainView.viewModel + model
+        mainView.viewModel.products = mainView.viewModel.products + model
         mainView.tableView.reloadData()
         showLoading(loading: false)
     }
     
     func taskError() {
         showLoading(loading: false)
-        //TODO : Retry hitting & loading products
+
+        let alert = UIAlertController(title: "Network Error", message: "Please try again", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Retry", style: .default, handler: {
+            [weak self] action in
+            self?.retry()
+        })
+        alert.addAction(okAction)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alert.addAction(cancelAction)
+        self.present(alert, animated: true, completion: nil)
     }
 }
 
-// MARK: -
+// MARK: - ProductsTableViewDelegate
 
 extension ProductsViewController: ProductsTableViewDelegate {
-    func productDetails(_ product: Product) {
-        
+    func productDetails(_ product: Product,_ image: UIImage) {
+        performSegue(withIdentifier: ProductDetailsSegue, sender: ["product" : product, "image" : image])
     }
     
     func loadNextPage() {
-        showLoading(loading: true)
         // Increase page number by 1
         pageNumber = pageNumber + 1
-        print("next 30 and page number \(pageNumber)")
-        networkService.getProductsList(ofPages: pageNumber, ofProducts: productsInPage)
+        retry()
     }
 }
 
