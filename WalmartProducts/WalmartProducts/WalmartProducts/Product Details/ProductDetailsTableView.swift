@@ -13,11 +13,15 @@ class ProductDetailsTableView: UIView,
                                UITableViewDelegate,
                                UITableViewDataSource {
 
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet fileprivate weak var tableView: UITableView!
     private let CellIdentifier = "DetailsCell"
     private let ExtraCellIdentifier = "ExtraInfo"
-    var viewModel: ProductsDetailsViewModel?
+    fileprivate var viewModel: ProductsDetailsViewModel?
     
+    func setViewModel(_ viewModel: ProductsDetailsViewModel?) {
+        self.viewModel = viewModel
+    }
+
     // MARK: -  UITableViewDataSource
     
     // TODO: Give different design for compact height using 'Vary for Traits' in storyboard
@@ -37,7 +41,7 @@ class ProductDetailsTableView: UIView,
                     return UITableViewCell()
             }
             
-            cell.configure(model)
+            cell.setViewModel(model)
             return cell
         
         case 1:

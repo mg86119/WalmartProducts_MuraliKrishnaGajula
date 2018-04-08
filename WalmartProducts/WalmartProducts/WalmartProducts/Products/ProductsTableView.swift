@@ -10,7 +10,6 @@ import Foundation
 import UIKit
 
 // TODO: Add 'Go to top' button
-
 protocol ProductsTableViewDelegate: class {
     func productDetails(_ product: Product,_ image: UIImage)
     func loadNextPage()
@@ -20,28 +19,45 @@ class ProductsTableView: UIView,
                          UITableViewDelegate,
                          UITableViewDataSource {
     
-    @IBOutlet weak var tableView: UITableView!
-    private let CellIdentifier = "ProductsTableViewCell"
+    @IBOutlet fileprivate weak var tableView: UITableView!
     weak var delegate: ProductsTableViewDelegate?
-    var viewModel = ProductsViewModel()
+
+    private let CellIdentifier = "ProductsTableViewCell"
+    fileprivate var viewModel: ProductsViewModel? {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+    
+    func setViewModel(_ model: ProductsViewModel) {
+        guard let vModel = viewModel else {
+            viewModel = ProductsViewModel(model.products)
+            return
+        }
+        vModel.products = vModel.products + model.products
+        tableView.reloadData()
+    }
     
     // MARK: -  UITableViewDataSource
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.products.count
+        guard let vModel = viewModel else {
+            return 0
+        }
+        return vModel.products.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //TimeConstraintComment: Would like to configure custom cell with all the data and use in SchoolsView table
-        // based on design
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier, for: indexPath)
+        guard let vModel = viewModel,
+            let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier, for: indexPath)
             as? ProductsTableViewCell else { return UITableViewCell() }
-            cell.configure(viewModel.products[indexPath.row])
+            cell.setViewModel(vModel.products[indexPath.row])
         return cell
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        let lastElement = viewModel.products.count - 1
+        guard let vModel = viewModel else { return }
+        let lastElement = vModel.products.count - 1
         if indexPath.row == lastElement {
             delegate?.loadNextPage()
         }
@@ -50,13 +66,16 @@ class ProductsTableView: UIView,
     // MARK: -  UITableViewDelegate
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let cell = tableView.cellForRow(at: indexPath) as? ProductsTableViewCell,
-            let imageStr = viewModel.products[indexPath.row].productImage,
+        guard let vModel = viewModel,
+            let cell = tableView.cellForRow(at: indexPath) as? ProductsTableViewCell,
+            let imageStr = vModel.products[indexPath.row].productImage,
             let imageUrl = URL(string: imageStr),
-            let cachedImage = cell.imageCache.object(forKey: imageUrl.absoluteString as NSString) else {
+            let cachedImage = cell.getImageFromCache(imageUrl.absoluteString as NSString) else {
             return
         }
-
-        delegate?.productDetails(viewModel.products[indexPath.row], cachedImage)
+        
+        // deselect row first then call curresponding action
+        tableView.deselectRow(at: indexPath, animated: true)
+        delegate?.productDetails(vModel.products[indexPath.row], cachedImage)
     }
 }

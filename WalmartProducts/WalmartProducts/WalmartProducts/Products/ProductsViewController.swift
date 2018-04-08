@@ -21,7 +21,7 @@ class ProductsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "Walmart Products"
+        title = "Walmart Products"
         
         mainView.delegate = self
         
@@ -58,21 +58,22 @@ class ProductsViewController: UIViewController {
 
 extension ProductsViewController: NetworkServiceDelegate {
     func taskComplete(_ model: [Product]) {
-        mainView.viewModel.products = mainView.viewModel.products + model
-        mainView.tableView.reloadData()
+        mainView.setViewModel(ProductsViewModel(model))
         showLoading(loading: false)
     }
     
     func taskError() {
         showLoading(loading: false)
 
-        let alert = UIAlertController(title: "Network Error", message: "Please try again", preferredStyle: .alert)
+        // TODO: Have a custom wrapper around UIAlertController to take care of all alerts
+        // Show Alert that there is some network issue
+        let alert = UIAlertController(title: "Network Error", message: "There is a problem connecting server to retrieve products. Please try again after sometime", preferredStyle: .alert)
         let okAction = UIAlertAction(title: "Retry", style: .default, handler: {
             [weak self] action in
             self?.retry()
         })
         alert.addAction(okAction)
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let cancelAction = UIAlertAction(title: "Okay", style: .cancel, handler: nil)
         alert.addAction(cancelAction)
         self.present(alert, animated: true, completion: nil)
     }

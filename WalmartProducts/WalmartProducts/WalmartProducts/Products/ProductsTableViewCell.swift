@@ -10,18 +10,22 @@ import Foundation
 import UIKit
 
 class ProductsTableViewCell: UITableViewCell {
-    @IBOutlet weak var productName: UILabel!
-    @IBOutlet weak var productImage: UIImageView!
-    let imageCache = NSCache<NSString, UIImage>()
+    @IBOutlet fileprivate weak var productName: UILabel!
+    @IBOutlet fileprivate weak var productImage: UIImageView!
+    fileprivate let imageCache = NSCache<NSString, UIImage>()
     
-    func configure(_ product: Product) {
-        productName.text = product.productName
-        guard let imageStr = product.productImage,
+    func getImageFromCache(_ key: NSString) -> UIImage? {
+        return imageCache.object(forKey: key)
+    }
+
+    func setViewModel(_ viewModel: Product) {
+        productName.text = viewModel.productName
+        guard let imageStr = viewModel.productImage,
             let imageUrl = URL(string: imageStr) else {
             return
         }
 
-        if let cachedImage = imageCache.object(forKey: imageUrl.absoluteString as NSString) {
+        if let cachedImage = getImageFromCache(imageUrl.absoluteString as NSString) {
             productImage.image = cachedImage
         } else {
             productImage.downloadImage(url: imageUrl, completion: { [weak self] (image, error) in

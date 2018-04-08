@@ -13,11 +13,11 @@ class ProductDetailsViewController: UIViewController {
     
     @IBOutlet fileprivate weak var mainView: ProductDetailsTableView!
     private let ExtraDetailsSegue = "ExtraDetailsSegue"
-    var viewModel: ProductsDetailsViewModel?
+    var viewModel: ProductsDetailsViewModel? 
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "Product Details"
-        mainView.viewModel = viewModel
+        title = "Details"
+        mainView.setViewModel(viewModel)
     }
 }

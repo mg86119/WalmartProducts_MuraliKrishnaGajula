@@ -12,7 +12,7 @@ import UIKit
 class ProductsViewModel {
     var products: [Product]
     
-    init(_ products: [Product] = []) {
+    init(_ products: [Product]) {
         self.products = products
     }
 }
