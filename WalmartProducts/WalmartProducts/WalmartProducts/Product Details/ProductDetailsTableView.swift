@@ -20,8 +20,9 @@ class ProductDetailsTableView: UIView,
     
     // MARK: -  UITableViewDataSource
     
+    // TODO: Give different design for compact height using 'Vary for Traits' in storyboard
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        return 4
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -38,14 +39,25 @@ class ProductDetailsTableView: UIView,
             
             cell.configure(model)
             return cell
+        
+        case 1:
+            guard let model = viewModel, let stock = model.product.inStock else {
+                return UITableViewCell()
+            }
+            let cell = tableView.dequeueReusableCell(withIdentifier: ExtraCellIdentifier, for: indexPath) as UITableViewCell
             
+            cell.textLabel?.text = stock ? "Available in Store/Online" : "Currently Not Available"
+            cell.textLabel?.textColor = stock ? UIColor.green : UIColor.red
+            cell.textLabel?.numberOfLines = 0
+            return cell
+
         default:
             guard let model = viewModel else {
                 return UITableViewCell()
             }
             let cell = tableView.dequeueReusableCell(withIdentifier: ExtraCellIdentifier, for: indexPath) as UITableViewCell
 
-            let desc = indexPath.section == 1 ? model.product.shortDescription : model.product.longDescription
+            let desc = indexPath.section == 2 ? model.product.shortDescription : model.product.longDescription
             cell.textLabel?.assignHmlString(htmlString: desc, withFontSize: 20)
             cell.textLabel?.numberOfLines = 0
             return cell
@@ -56,8 +68,10 @@ class ProductDetailsTableView: UIView,
         var title = ""
         switch section {
         case 1:
-            title = "Short Description"
+            title = "In Stock"
         case 2:
+            title = "Short Description"
+        case 3:
             title = "Long Description"
         default:
             break

@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WalmartProducts/NetworkService/NetworkService.swift"
-            timestampString = "544831454.498974"
+            timestampString = "544888240.2695971"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "32"
@@ -42,7 +42,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WalmartProducts/NetworkService/NetworkService.swift"
-            timestampString = "544831454.4990391"
+            timestampString = "544888240.2701809"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "81"
@@ -58,7 +58,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WalmartProducts/NetworkService/NetworkService.swift"
-            timestampString = "544831454.499097"
+            timestampString = "544888240.270528"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "89"
@@ -102,7 +102,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WalmartProducts/NetworkService/NetworkService.swift"
-            timestampString = "544831454.499285"
+            timestampString = "544888240.2708549"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "45"
@@ -118,7 +118,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WalmartProducts/NetworkService/NetworkService.swift"
-            timestampString = "544831454.499341"
+            timestampString = "544888240.271185"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "44"
@@ -220,6 +220,38 @@
             startingLineNumber = "30"
             endingLineNumber = "30"
             landmarkName = "setModel(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WalmartProductsTests/ProductDetailsTests/ProductsDetailsTableViewCellTests.swift"
+            timestampString = "544891850.596158"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "testInItOfProductsDetailsViewModel()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WalmartProductsTests/ProductsTests/ProductsViewModelTests.swift"
+            timestampString = "544893961.6532249"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "testInItProductsViewModel()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

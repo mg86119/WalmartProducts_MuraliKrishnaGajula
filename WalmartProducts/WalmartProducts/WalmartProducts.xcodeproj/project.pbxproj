@@ -12,6 +12,11 @@
 		8704BE72207922640025045F /* ProductsDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8704BE71207922640025045F /* ProductsDetailsTableViewCell.swift */; };
 		8704BE7420792A410025045F /* ProductsDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8704BE7320792A410025045F /* ProductsDetailsViewModel.swift */; };
 		8704BE7620792CB80025045F /* ProductsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8704BE7520792CB80025045F /* ProductsViewModel.swift */; };
+		872C725F207A3BBF00EAAB71 /* UIImageView+ExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872C725E207A3BBF00EAAB71 /* UIImageView+ExtensionTests.swift */; };
+		872C7261207A46C700EAAB71 /* UILabel+ExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872C7260207A46C700EAAB71 /* UILabel+ExtensionTests.swift */; };
+		872C7264207A4DA900EAAB71 /* NetworkServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872C7263207A4DA900EAAB71 /* NetworkServiceTests.swift */; };
+		872C7267207A562600EAAB71 /* ProductDetailsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872C7266207A562600EAAB71 /* ProductDetailsViewModelTests.swift */; };
+		872C726D207A641700EAAB71 /* ProductsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872C726C207A641700EAAB71 /* ProductsViewModelTests.swift */; };
 		877D78672078659300450B29 /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877D78662078659300450B29 /* ProductsViewController.swift */; };
 		877D7869207865AE00450B29 /* ProductsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877D7868207865AE00450B29 /* ProductsTableView.swift */; };
 		877D786B207865C500450B29 /* ProductsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877D786A207865C500450B29 /* ProductsTableViewCell.swift */; };
@@ -50,6 +55,11 @@
 		8704BE71207922640025045F /* ProductsDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsDetailsTableViewCell.swift; sourceTree = "<group>"; };
 		8704BE7320792A410025045F /* ProductsDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsDetailsViewModel.swift; sourceTree = "<group>"; };
 		8704BE7520792CB80025045F /* ProductsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewModel.swift; sourceTree = "<group>"; };
+		872C725E207A3BBF00EAAB71 /* UIImageView+ExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+ExtensionTests.swift"; sourceTree = "<group>"; };
+		872C7260207A46C700EAAB71 /* UILabel+ExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+ExtensionTests.swift"; sourceTree = "<group>"; };
+		872C7263207A4DA900EAAB71 /* NetworkServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceTests.swift; sourceTree = "<group>"; };
+		872C7266207A562600EAAB71 /* ProductDetailsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsViewModelTests.swift; sourceTree = "<group>"; };
+		872C726C207A641700EAAB71 /* ProductsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewModelTests.swift; sourceTree = "<group>"; };
 		877D78662078659300450B29 /* ProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
 		877D7868207865AE00450B29 /* ProductsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsTableView.swift; sourceTree = "<group>"; };
 		877D786A207865C500450B29 /* ProductsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsTableViewCell.swift; sourceTree = "<group>"; };
@@ -106,6 +116,39 @@
 				8704BE7320792A410025045F /* ProductsDetailsViewModel.swift */,
 			);
 			path = "Product Details";
+			sourceTree = "<group>";
+		};
+		872C725D207A3B9800EAAB71 /* UtilityTests */ = {
+			isa = PBXGroup;
+			children = (
+				872C725E207A3BBF00EAAB71 /* UIImageView+ExtensionTests.swift */,
+				872C7260207A46C700EAAB71 /* UILabel+ExtensionTests.swift */,
+			);
+			path = UtilityTests;
+			sourceTree = "<group>";
+		};
+		872C7262207A4D8A00EAAB71 /* NetworkServiceTests */ = {
+			isa = PBXGroup;
+			children = (
+				872C7263207A4DA900EAAB71 /* NetworkServiceTests.swift */,
+			);
+			path = NetworkServiceTests;
+			sourceTree = "<group>";
+		};
+		872C7265207A560400EAAB71 /* ProductDetailsTests */ = {
+			isa = PBXGroup;
+			children = (
+				872C7266207A562600EAAB71 /* ProductDetailsViewModelTests.swift */,
+			);
+			path = ProductDetailsTests;
+			sourceTree = "<group>";
+		};
+		872C726B207A63F300EAAB71 /* ProductsTests */ = {
+			isa = PBXGroup;
+			children = (
+				872C726C207A641700EAAB71 /* ProductsViewModelTests.swift */,
+			);
+			path = ProductsTests;
 			sourceTree = "<group>";
 		};
 		877D78652078657C00450B29 /* Products */ = {
@@ -169,7 +212,6 @@
 				878BF3262078531500B3557F /* Assets.xcassets */,
 				878BF3282078531500B3557F /* LaunchScreen.storyboard */,
 				878BF32B2078531500B3557F /* Info.plist */,
-				87C23EB52079A5A800DF76F2 /* WalmartProductsTests-Bridging-Header.h */,
 			);
 			path = WalmartProducts;
 			sourceTree = "<group>";
@@ -177,6 +219,10 @@
 		878BF3332078531500B3557F /* WalmartProductsTests */ = {
 			isa = PBXGroup;
 			children = (
+				872C726B207A63F300EAAB71 /* ProductsTests */,
+				872C7265207A560400EAAB71 /* ProductDetailsTests */,
+				872C7262207A4D8A00EAAB71 /* NetworkServiceTests */,
+				872C725D207A3B9800EAAB71 /* UtilityTests */,
 				87C23EB42079A50000DF76F2 /* ModelTests */,
 				878BF3362078531500B3557F /* Info.plist */,
 			);
@@ -204,6 +250,7 @@
 			isa = PBXGroup;
 			children = (
 				87C23EB62079A5A800DF76F2 /* ProductTests.swift */,
+				87C23EB52079A5A800DF76F2 /* WalmartProductsTests-Bridging-Header.h */,
 			);
 			path = ModelTests;
 			sourceTree = "<group>";
@@ -363,7 +410,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				872C726D207A641700EAAB71 /* ProductsViewModelTests.swift in Sources */,
+				872C725F207A3BBF00EAAB71 /* UIImageView+ExtensionTests.swift in Sources */,
+				872C7261207A46C700EAAB71 /* UILabel+ExtensionTests.swift in Sources */,
+				872C7264207A4DA900EAAB71 /* NetworkServiceTests.swift in Sources */,
 				87C23EB72079A5A900DF76F2 /* ProductTests.swift in Sources */,
+				872C7267207A562600EAAB71 /* ProductDetailsViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
