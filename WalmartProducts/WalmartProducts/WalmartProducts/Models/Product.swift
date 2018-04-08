@@ -15,7 +15,7 @@ class Product {
     let longDescription: String?
     let price: String?
     let productImage: String?
-    let reviewRating: Int?
+    let reviewRating: Double?
     let reviewCount: Int?
     let inStock: Bool?
 
@@ -26,7 +26,7 @@ class Product {
         self.longDescription = json["longDescription"] as? String
         self.price = json["price"] as? String
         self.productImage = json["productImage"] as? String
-        self.reviewRating = json["reviewRating"] as? Int
+        self.reviewRating = json["reviewRating"] as? Double
         self.reviewCount = json["reviewCount"] as? Int
         self.inStock = json["inStock"] as? Bool
     }

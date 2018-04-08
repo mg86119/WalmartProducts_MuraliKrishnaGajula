@@ -21,10 +21,10 @@
 		878BF3252078531500B3557F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 878BF3232078531500B3557F /* Main.storyboard */; };
 		878BF3272078531500B3557F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 878BF3262078531500B3557F /* Assets.xcassets */; };
 		878BF32A2078531500B3557F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 878BF3282078531500B3557F /* LaunchScreen.storyboard */; };
-		878BF3352078531500B3557F /* WalmartProductsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878BF3342078531500B3557F /* WalmartProductsTests.swift */; };
 		878BF3402078531500B3557F /* WalmartProductsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878BF33F2078531500B3557F /* WalmartProductsUITests.swift */; };
 		878BF34F2078607000B3557F /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878BF34E2078607000B3557F /* Product.swift */; };
 		87C23EB120797DBD00DF76F2 /* UIlabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C23EB020797DBD00DF76F2 /* UIlabel+Extension.swift */; };
+		87C23EB72079A5A900DF76F2 /* ProductTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C23EB62079A5A800DF76F2 /* ProductTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,13 +62,14 @@
 		878BF3292078531500B3557F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		878BF32B2078531500B3557F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		878BF3302078531500B3557F /* WalmartProductsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WalmartProductsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		878BF3342078531500B3557F /* WalmartProductsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalmartProductsTests.swift; sourceTree = "<group>"; };
 		878BF3362078531500B3557F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		878BF33B2078531500B3557F /* WalmartProductsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WalmartProductsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		878BF33F2078531500B3557F /* WalmartProductsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalmartProductsUITests.swift; sourceTree = "<group>"; };
 		878BF3412078531500B3557F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		878BF34E2078607000B3557F /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		87C23EB020797DBD00DF76F2 /* UIlabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIlabel+Extension.swift"; sourceTree = "<group>"; };
+		87C23EB52079A5A800DF76F2 /* WalmartProductsTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WalmartProductsTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		87C23EB62079A5A800DF76F2 /* ProductTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +169,7 @@
 				878BF3262078531500B3557F /* Assets.xcassets */,
 				878BF3282078531500B3557F /* LaunchScreen.storyboard */,
 				878BF32B2078531500B3557F /* Info.plist */,
+				87C23EB52079A5A800DF76F2 /* WalmartProductsTests-Bridging-Header.h */,
 			);
 			path = WalmartProducts;
 			sourceTree = "<group>";
@@ -175,7 +177,7 @@
 		878BF3332078531500B3557F /* WalmartProductsTests */ = {
 			isa = PBXGroup;
 			children = (
-				878BF3342078531500B3557F /* WalmartProductsTests.swift */,
+				87C23EB42079A50000DF76F2 /* ModelTests */,
 				878BF3362078531500B3557F /* Info.plist */,
 			);
 			path = WalmartProductsTests;
@@ -196,6 +198,14 @@
 				878BF34E2078607000B3557F /* Product.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		87C23EB42079A50000DF76F2 /* ModelTests */ = {
+			isa = PBXGroup;
+			children = (
+				87C23EB62079A5A800DF76F2 /* ProductTests.swift */,
+			);
+			path = ModelTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,6 +280,7 @@
 					};
 					878BF32F2078531500B3557F = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 878BF31B2078531500B3557F;
 					};
@@ -352,7 +363,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				878BF3352078531500B3557F /* WalmartProductsTests.swift in Sources */,
+				87C23EB72079A5A900DF76F2 /* ProductTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -539,11 +550,14 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = WalmartProductsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.murali.WalmartProductsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "WalmartProductsTests/ModelTests/WalmartProductsTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WalmartProducts.app/WalmartProducts";
@@ -555,11 +569,13 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = WalmartProductsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.murali.WalmartProductsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "WalmartProductsTests/ModelTests/WalmartProductsTests-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WalmartProducts.app/WalmartProducts";
