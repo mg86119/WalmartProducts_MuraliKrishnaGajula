@@ -23,13 +23,13 @@
 		877D787020786A2700450B29 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877D786F20786A2700450B29 /* UIImageView+Extension.swift */; };
 		877D78732078729000450B29 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877D78722078729000450B29 /* NetworkService.swift */; };
 		878BF3202078531500B3557F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878BF31F2078531500B3557F /* AppDelegate.swift */; };
-		878BF3252078531500B3557F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 878BF3232078531500B3557F /* Main.storyboard */; };
 		878BF3272078531500B3557F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 878BF3262078531500B3557F /* Assets.xcassets */; };
 		878BF32A2078531500B3557F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 878BF3282078531500B3557F /* LaunchScreen.storyboard */; };
 		878BF3402078531500B3557F /* WalmartProductsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878BF33F2078531500B3557F /* WalmartProductsUITests.swift */; };
 		878BF34F2078607000B3557F /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878BF34E2078607000B3557F /* Product.swift */; };
 		87C23EB120797DBD00DF76F2 /* UIlabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C23EB020797DBD00DF76F2 /* UIlabel+Extension.swift */; };
 		87C23EB72079A5A900DF76F2 /* ProductTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C23EB62079A5A800DF76F2 /* ProductTests.swift */; };
+		87E67E3E207AE9EB007E3E54 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87E67E3D207AE9EB007E3E54 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,7 +67,6 @@
 		877D78722078729000450B29 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		878BF31C2078531500B3557F /* WalmartProducts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WalmartProducts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		878BF31F2078531500B3557F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		878BF3242078531500B3557F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		878BF3262078531500B3557F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		878BF3292078531500B3557F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		878BF32B2078531500B3557F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -80,6 +79,7 @@
 		87C23EB020797DBD00DF76F2 /* UIlabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIlabel+Extension.swift"; sourceTree = "<group>"; };
 		87C23EB52079A5A800DF76F2 /* WalmartProductsTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WalmartProductsTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		87C23EB62079A5A800DF76F2 /* ProductTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTests.swift; sourceTree = "<group>"; };
+		87E67E3D207AE9EB007E3E54 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,7 +208,7 @@
 				877D786C207869C400450B29 /* Utility */,
 				877D78712078727800450B29 /* NetworkService */,
 				878BF31F2078531500B3557F /* AppDelegate.swift */,
-				878BF3232078531500B3557F /* Main.storyboard */,
+				87E67E3D207AE9EB007E3E54 /* Main.storyboard */,
 				878BF3262078531500B3557F /* Assets.xcassets */,
 				878BF3282078531500B3557F /* LaunchScreen.storyboard */,
 				878BF32B2078531500B3557F /* Info.plist */,
@@ -363,9 +363,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87E67E3E207AE9EB007E3E54 /* Main.storyboard in Resources */,
 				878BF32A2078531500B3557F /* LaunchScreen.storyboard in Resources */,
 				878BF3272078531500B3557F /* Assets.xcassets in Resources */,
-				878BF3252078531500B3557F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -443,14 +443,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		878BF3232078531500B3557F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				878BF3242078531500B3557F /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		878BF3282078531500B3557F /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
